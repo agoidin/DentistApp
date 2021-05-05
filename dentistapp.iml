@@ -14,7 +14,9 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="dentistapp" value="424b0aae-6e99-46ec-9432-783606d503f9" />
+        </datasource-mapping>
         <naming-strategy-map />
       </configuration>
     </facet>
