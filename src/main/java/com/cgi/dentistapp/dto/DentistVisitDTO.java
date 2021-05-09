@@ -15,8 +15,7 @@ public class DentistVisitDTO {
     @DateTimeFormat(pattern = "dd.MM.yyyy")
     Date visitTime;
 
-    public DentistVisitDTO() {
-    }
+    public DentistVisitDTO() { }
 
     public DentistVisitDTO(String dentistName, Date visitTime) {
         this.dentistName = dentistName;
