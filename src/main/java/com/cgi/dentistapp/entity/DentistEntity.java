@@ -3,7 +3,7 @@ package com.cgi.dentistapp.entity;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "Dentists")
 public class DentistEntity {
 
     @Id
@@ -17,21 +17,18 @@ public class DentistEntity {
             generator = "student_sequence"
     )
     private Long id;
-    private String firstName;
-    private String lastName;
+    private String name;
 
     public DentistEntity() {
     }
 
-//    public DentistEntity(Long id, String firstName, String lastName) {
-//        this.id = id;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//    }
+    public DentistEntity(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
-    public DentistEntity(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public DentistEntity(String name) {
+        this.name = name;
     }
 
     public Long getId() {
@@ -42,19 +39,11 @@ public class DentistEntity {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return this.name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
 }
