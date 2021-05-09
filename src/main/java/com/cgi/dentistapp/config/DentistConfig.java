@@ -7,9 +7,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import java.util.Arrays;
-import java.util.List;
-
 @Configuration
 @EnableJpaRepositories(basePackages = "com.cgi.dentistapp.repository")
 public class DentistConfig {
@@ -18,15 +15,8 @@ public class DentistConfig {
     CommandLineRunner commandLineRunner(
             DentistRepository repository) {
         return args -> {
-            repository.save(new DentistEntity(
-                    "Maria",
-                    "Gold"
-            ));
-
-            repository.save(new DentistEntity(
-                    "Antonio",
-                    "Silver"
-            ));
+            repository.save(new DentistEntity("Maria Gold"));
+            repository.save(new DentistEntity("Antonio Silver"));
         };
     }
 }
