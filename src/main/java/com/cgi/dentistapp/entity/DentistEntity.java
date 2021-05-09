@@ -1,6 +1,7 @@
 package com.cgi.dentistapp.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Dentists")
@@ -17,7 +18,12 @@ public class DentistEntity {
             generator = "student_sequence"
     )
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "name")
+    private List<DentistVisitEntity> dentistVisitEntities;
 
     public DentistEntity() {
     }
